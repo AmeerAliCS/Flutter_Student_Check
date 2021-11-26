@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "815770627100",
+    "project_id": "students-check",
+    "storage_bucket": "students-check.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815770627100:android:2d4d719b8fad681b9f83d9",
+        "android_client_info": {
+          "package_name": "com.example.students_check"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815770627100-thgcbtjm8uoik2jm0a9evkqj75111und.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.students_check",
+            "certificate_hash": "5af667d92100f831b3f692bfb8f4be86aec0619f"
+          }
+        },
+        {
+          "client_id": "815770627100-bpoiamriceu2ek6lau0d0rko0ab57db1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsER-LneX64wtfi0LVkz6-g8EBamn2Ptk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815770627100-bpoiamriceu2ek6lau0d0rko0ab57db1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
