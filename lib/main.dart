@@ -17,9 +17,9 @@ void main() async {
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: const Color(0xFF495464)
+          primaryColor: const Color(0xFF495464),
       ),
-      home: const RootPage(),
+      home: const AdminHome(),
       onGenerateRoute: RouteGenerator.generateRoute,
     ),
   ));
