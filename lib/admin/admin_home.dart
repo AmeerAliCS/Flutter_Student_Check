@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:students_check/admin/register.dart';
+import 'package:students_check/admin/students_data.dart';
 import 'package:students_check/auth/auth_provider.dart';
 import 'package:students_check/auth/login.dart';
 import 'package:students_check/components/rounded_button.dart';
@@ -52,7 +53,9 @@ class _AdminHomeState extends State<AdminHome> {
         child: RoundedButton(
           title: 'بيانات الطلاب',
           colour: kColor,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).pushNamed(StudentsData.id);
+          },
         ),
       ),
     );

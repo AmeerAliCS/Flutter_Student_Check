@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:students_check/admin/admin_home.dart';
 import 'package:students_check/admin/register.dart';
+import 'package:students_check/admin/student_details.dart';
+import 'package:students_check/admin/students_data.dart';
 import 'package:students_check/auth/login.dart';
 import 'package:students_check/auth/root_page.dart';
 import 'package:students_check/pages/profile.dart';
