@@ -37,6 +37,7 @@ class _LoginState extends State<Login> {
   final DateTime timestamp = DateTime.now();
   // authProblems errorType;
   ErrorHandler errorHandler = ErrorHandler();
+  bool _obscureText = true;
 
 
   @override
@@ -87,6 +88,7 @@ class _LoginState extends State<Login> {
         validator: (value) => value!.isEmpty ? 'يرجى ادخال الايميل' : null,
         keyboardType: TextInputType.emailAddress,
         decoration: kTextFieldDecoration.copyWith(
+            prefixIcon: const Icon(Icons.email),
             hintText: 'الايميل',
             labelText: 'الايميل'
         ),
@@ -105,10 +107,19 @@ class _LoginState extends State<Login> {
         onSaved: (value) => _password = value!,
         validator: (value) => value!.isEmpty ? 'يرجى ادخال الباسوورد' : null,
         decoration: kTextFieldDecoration.copyWith(
+            prefixIcon: const Icon(Icons.lock),
+            suffixIcon: GestureDetector(
+              child: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+              onTap: (){
+                 setState(() {
+                 _obscureText = !_obscureText;
+                 });
+              },
+            ),
             hintText: 'الباسوورد',
             labelText: 'الباسوورد'
         ),
-        obscureText: true,
+        obscureText: _obscureText,
         style: const TextStyle(
             height: 1.0,
             color: kColor
@@ -124,6 +135,7 @@ class _LoginState extends State<Login> {
         title: 'الدخول',
         colour: kColor,
         onPressed: validateAndSubmit,
+        size: 0,
       ),
     );
   }

@@ -172,7 +172,9 @@ class _RegisterState extends State<Register> {
         title: 'اضافة الطالب',
         colour: kColor,
         onPressed: validateAndSubmit,
+        size: 0,
       ),
+
     );
   }
 

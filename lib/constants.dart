@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 const kColor = Color(0xFF495464);
+const gColor = Color(0xFF4CAF50);
+const bColor = Color(0xFF00ADB5);
+const pColor = Color(0xFF864879);
+const oColor = Color(0xFFDF6265);
 
 const kTextFieldDecoration  = InputDecoration(
   border: OutlineInputBorder(

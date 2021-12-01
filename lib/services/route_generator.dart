@@ -36,6 +36,14 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const AdminHome());
         break;
 
+      case StudentsData.id:
+        return MaterialPageRoute(builder: (_) => const StudentsData());
+        break;
+
+      case StudentDetails.id:
+        return MaterialPageRoute(builder: (_) => StudentDetails(profileId: args,));
+        break;
+
       default:
         return _errorRoute();
     }

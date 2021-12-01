@@ -20,7 +20,7 @@ void main() async {
       theme: ThemeData(
           primaryColor: const Color(0xFF495464),
       ),
-      home: const StudentsData(),
+      home: const RootPage(),
       onGenerateRoute: RouteGenerator.generateRoute,
     ),
   ));

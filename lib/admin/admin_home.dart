@@ -16,6 +16,7 @@ class AdminHome extends StatefulWidget {
 }
 
 class _AdminHomeState extends State<AdminHome> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +41,7 @@ class _AdminHomeState extends State<AdminHome> {
 
   Widget _showImage() {
     return GestureDetector(
-        onDoubleTap: () => _signOut(context),
+        onLongPress: () => _signOut(context),
         child: Align(child: SvgPicture.asset('assets/images/admin_img.svg', height: 260.0), alignment: Alignment.topCenter,)
     );
   }
@@ -56,6 +57,7 @@ class _AdminHomeState extends State<AdminHome> {
           onPressed: (){
             Navigator.of(context).pushNamed(StudentsData.id);
           },
+          size: 0,
         ),
       ),
     );
@@ -72,6 +74,7 @@ class _AdminHomeState extends State<AdminHome> {
           onPressed: (){
             Navigator.of(context).pushNamed(Register.id);
           },
+          size: 0,
         ),
       ),
     );

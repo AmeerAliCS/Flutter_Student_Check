@@ -3,6 +3,7 @@ import 'package:students_check/admin/admin_home.dart';
 import 'package:students_check/auth/auth.dart';
 import 'package:students_check/auth/auth_provider.dart';
 import 'package:students_check/auth/login.dart';
+import 'package:students_check/components/progress.dart';
 import 'package:students_check/constants.dart';
 import 'package:students_check/pages/profile.dart';
 
@@ -26,7 +27,7 @@ class _RootPageState extends State<RootPage> {
 
   bool isAuth = false;
   late bool isAdmin;
-  final String adminId1 = '2HSqmRyJauhu32ReH9o2iI1CsOj1';
+  final String adminId1 = 's3i03xUhLzV3gmzf6Cyt6AoTEo33';
   final String adminId2 = 'CJwiSbGjubZKdSF4o89PWWfEWkN2';
   AuthStatus checkLogged = AuthStatus.notKnow;
   final DateTime timestamp = DateTime.now();
@@ -39,32 +40,45 @@ class _RootPageState extends State<RootPage> {
     return StreamBuilder<String>(
       stream: auth.onAuthStateChanged,
       builder: (BuildContext context, AsyncSnapshot<String> snapshot){
-        if(snapshot.connectionState == ConnectionState.active){
-          if(!snapshot.hasData){
-            return const Login();
-          }
-          final bool isLoggedIn = snapshot.hasData;
-          if(snapshot.data == adminId1){
-            isAdmin = true;
-          }
-          else{
-            isAdmin = false;
-          }
-          if(isLoggedIn){
-            if(isAdmin){
-              return const AdminHome();
-            } else{
-              return Profile(currentUserId: snapshot.data);
-            }
-          } else{
-            return const Login();
-          }
-        }
-        else if (snapshot.connectionState == ConnectionState.waiting ||
-            snapshot.connectionState == ConnectionState.none){
 
-          print('Error in network');
+        if (!snapshot.hasData){
+          return const Login();
         }
+        else if (snapshot.hasData){
+          if (snapshot.data == 's3i03xUhLzV3gmzf6Cyt6AoTEo33'){
+            return const AdminHome();
+          }
+          else {
+            return Profile(currentUserId: snapshot.data);
+          }
+        }
+        // if(snapshot.connectionState == ConnectionState.active){
+        //   if(!snapshot.hasData){
+        //     return const Login();
+        //   }
+        //   final bool isLoggedIn = snapshot.hasData;
+        //   if(snapshot.data == 's3i03xUhLzV3gmzf6Cyt6AoTEo33'){
+        //       isAdmin = true;
+        //       return const AdminHome();
+        //   }
+        //   else{
+        //       isAdmin = false;
+        //   }
+        //   if(isLoggedIn){
+        //     if(isAdmin){
+        //       return const AdminHome();
+        //     } else{
+        //       return Profile(currentUserId: snapshot.data);
+        //     }
+        //   } else{
+        //     return const Login();
+        //   }
+        // }
+        // else if (snapshot.connectionState == ConnectionState.waiting ||
+        //     snapshot.connectionState == ConnectionState.none){
+        //
+        //   print('Error in network');
+        // }
         return _buildWaitingScreen();
       },
     );

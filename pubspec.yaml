@@ -75,7 +75,10 @@ flutter:
     - assets/images/vac3.svg
     - assets/images/vac4.svg
     - assets/images/admin_img.svg
+    - assets/images/person.svg
+    - assets/images/reading.svg
     - assets/images/dijlah.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

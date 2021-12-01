@@ -28,11 +28,6 @@ class _ProfileState extends State<Profile> {
 
 
   @override
-  void initState() {
-    // getUser();
-    super.initState();
-  }
-  @override
   Widget build(BuildContext context) => Scaffold(
 
       body: StreamBuilder<DocumentSnapshot>(
@@ -65,7 +60,7 @@ class _ProfileState extends State<Profile> {
 
   Widget _showImage() {
     return GestureDetector(
-      onDoubleTap: () =>_signOut(context),
+      onLongPress: () =>_signOut(context),
       child: Align(
           alignment: Alignment.topCenter,
           child: Image.asset('assets/images/dijlah.png',
@@ -79,7 +74,7 @@ class _ProfileState extends State<Profile> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Directionality(textDirection: TextDirection.rtl,
-              child: Text(userData!.get("displayName"), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
+              child: Text(userData!.get("displayName") ?? '', style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
           const Text(" :الاسم", style: TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold)),
         ],),
 
@@ -87,7 +82,7 @@ class _ProfileState extends State<Profile> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Directionality(textDirection: TextDirection.rtl,
-              child: Text(userData.get("department"), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
+              child: Text(userData.get("department") ?? '', style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
           const Text(" :القسم", style: TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold)),
         ],),
 
@@ -95,7 +90,7 @@ class _ProfileState extends State<Profile> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Directionality(textDirection: TextDirection.rtl,
-              child: Text(userData.get("stage"), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
+              child: Text(userData.get("stage") ?? '', style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
           const Text(" :المرحلة", style: TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold)),
         ],),
 
@@ -105,7 +100,7 @@ class _ProfileState extends State<Profile> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Directionality(textDirection: TextDirection.rtl,
-                child: Text(userData.get("vaccine"), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
+                child: Text(userData.get("vaccine") ?? '', style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
             const Text(" :حالةالطالب", style: TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold)),
           ],),
       ),
