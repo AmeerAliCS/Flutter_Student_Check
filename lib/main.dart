@@ -1,9 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:students_check/admin/admin_home.dart';
-import 'package:students_check/admin/register.dart';
-import 'package:students_check/admin/students_data.dart';
 import 'package:students_check/auth/auth.dart';
 import 'package:students_check/auth/auth_provider.dart';
 import 'package:students_check/auth/root_page.dart';

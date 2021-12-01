@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:students_check/admin/student_details.dart';
-import 'package:students_check/components/progress.dart';
 import 'package:students_check/constants.dart';
 
 class StudentsData extends StatefulWidget {

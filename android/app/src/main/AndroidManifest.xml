@@ -2,7 +2,7 @@
     package="com.example.students_check">
    <application
         android:label="Students Check"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon1">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

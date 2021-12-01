@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:students_check/auth/auth_provider.dart';
 import 'package:students_check/auth/login.dart';
 import 'package:students_check/components/progress.dart';
-import 'package:students_check/model/users.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:students_check/components/rounded_button.dart';
 import 'package:students_check/constants.dart';
 
 class Profile extends StatefulWidget {
@@ -23,7 +23,6 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
 
   bool isLoading = false;
-  late Users users;
   String email = '';
 
 
@@ -124,6 +123,16 @@ class _ProfileState extends State<Profile> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           child: Text(userData.get("vaccine"), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),),
+        ),
+
+        SizedBox(
+          height: 20.0,
+        ),
+        RoundedButton(
+          title: 'تسجيل خروج',
+          colour: oColor,
+          size: 0,
+          onPressed: () =>_signOut(context),
         ),
 
       ],),

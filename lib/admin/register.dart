@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:students_check/admin/admin_home.dart';
 import 'package:students_check/auth/auth_provider.dart';
 import 'package:students_check/components/rounded_button.dart';
 import 'package:students_check/constants.dart';
@@ -209,12 +210,8 @@ class _RegisterState extends State<Register> {
         });
         print(user);
 
-        setState(() {
-          showSpinner = false;
-        });
         showSnackBar();
-        Navigator.of(context).pop;
-
+        Navigator.of(context).pushNamed(AdminHome.id);
 
       }catch(e){
         print('Error: $e');

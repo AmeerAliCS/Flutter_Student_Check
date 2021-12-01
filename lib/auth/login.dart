@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:students_check/auth/auth_provider.dart';
+import 'package:students_check/auth/root_page.dart';
 import 'package:students_check/components/rounded_button.dart';
 import 'package:students_check/constants.dart';
-import 'package:students_check/pages/profile.dart';
+import 'package:students_check/pages/about_app.dart';
 import 'package:students_check/services/handle_error.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -54,14 +55,16 @@ class _LoginState extends State<Login> {
                 key: formKey,
                 child: Column(
                   children: [
+                    const SizedBox(height: 20.0),
                     _showTitle(),
-                    const SizedBox(height: 60.0),
+                    const SizedBox(height: 40.0),
                     _showImage(),
-                    const SizedBox(height: 15.0),
+                    const SizedBox(height: 30.0),
                     _showEmailInput(),
                     const SizedBox(height: 15.0),
                     _showPasswordInput(),
                     _showButtons(),
+                    _showAboutApp(),
                   ],
                 ),
               ),
@@ -140,6 +143,20 @@ class _LoginState extends State<Login> {
     );
   }
 
+  Widget _showAboutApp() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 0.0),
+      child: RoundedButton(
+        title: 'حول التطبيق',
+        size: 0,
+        colour: bColor,
+        onPressed: (){
+          Navigator.of(context).pushNamed(AboutApp.id);
+        },
+      ),
+    );
+  }
+
 
   bool validateAndSave(){
     final form = formKey.currentState;
@@ -171,7 +188,7 @@ class _LoginState extends State<Login> {
         setState(() {
           showSpinner = false;
         });
-        Navigator.of(context).pushNamed(Profile.id);
+        Navigator.of(context).pushNamed(RootPage.id);
 
       }catch(e){
         print('Error: $e');

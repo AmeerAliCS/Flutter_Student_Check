@@ -31,6 +31,7 @@ class _AdminHomeState extends State<AdminHome> {
                 const SizedBox(height: 70.0,),
                 _showDataButton(),
                 _showAddButton(),
+                _showLogoutButton(),
               ],
             ),
           ),
@@ -70,11 +71,26 @@ class _AdminHomeState extends State<AdminHome> {
         padding: const EdgeInsets.only(top: 0.0),
         child: RoundedButton(
           title: 'اضافة طالب',
-          colour: kColor,
+          colour: bColor,
           onPressed: (){
             Navigator.of(context).pushNamed(Register.id);
           },
           size: 0,
+        ),
+      ),
+    );
+  }
+
+  Widget _showLogoutButton() {
+    return Align(
+      alignment: Alignment.center,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 0.0),
+        child: RoundedButton(
+          title: 'تسجيل خروج',
+          colour: oColor,
+          size: 0,
+          onPressed: () =>_signOut(context),
         ),
       ),
     );
@@ -85,7 +101,7 @@ class _AdminHomeState extends State<AdminHome> {
       var auth = AuthProvider.of(context)!.auth;
       await auth.signOut();
       Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const Login()),
-              (Route<dynamic> route) => true);
+              (Route<dynamic> route) => false);
     } catch(e){
       print('Error: $e');
     }

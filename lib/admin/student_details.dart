@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:students_check/components/progress.dart';
@@ -85,19 +83,20 @@ class _StudentDetailsState extends State<StudentDetails> {
                     RoundedButton(
                       title: 'حذف الطالب',
                       colour: oColor,
-                      onPressed: () async {
+                      onPressed: () {
                         setState(() {
                           isLoading = true;
                         });
                         showSnackBar();
                         Navigator.of(context).pop();
-                        await FirebaseFirestore.instance.collection('users').doc(widget.profileId).delete().then((_){
-                          User? user = FirebaseAuth.instance.currentUser;
-                          user!.delete();
+                         FirebaseFirestore.instance.collection('users').doc(widget.profileId).delete().then((_){
+                          widget.profileId.delete().then((_){
+                            setState(() {
+                              isLoading = false;
+                            });
+                          });
                         });
-                        setState(() {
-                          isLoading = false;
-                        });
+
                       },
                       size: 55.0,
                     ),

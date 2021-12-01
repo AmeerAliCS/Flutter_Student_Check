@@ -5,6 +5,7 @@ import 'package:students_check/admin/student_details.dart';
 import 'package:students_check/admin/students_data.dart';
 import 'package:students_check/auth/login.dart';
 import 'package:students_check/auth/root_page.dart';
+import 'package:students_check/pages/about_app.dart';
 import 'package:students_check/pages/profile.dart';
 
 class RouteGenerator {
@@ -42,6 +43,10 @@ class RouteGenerator {
 
       case StudentDetails.id:
         return MaterialPageRoute(builder: (_) => StudentDetails(profileId: args,));
+        break;
+
+      case AboutApp.id:
+        return MaterialPageRoute(builder: (_) => const AboutApp());
         break;
 
       default:
