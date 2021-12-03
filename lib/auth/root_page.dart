@@ -26,7 +26,8 @@ class _RootPageState extends State<RootPage> {
 
   bool isAuth = false;
   late bool isAdmin;
-  final String admin = 'VS3vEyP5R0MSNOi35xN7ATV0egS2';
+  final String admin1 = 'VS3vEyP5R0MSNOi35xN7ATV0egS2';
+  final String admin2 = 'ykHZ3AXPbHRl7G2djDcJXY8Ig3s1';
   AuthStatus checkLogged = AuthStatus.notKnow;
   final DateTime timestamp = DateTime.now();
 
@@ -43,7 +44,7 @@ class _RootPageState extends State<RootPage> {
             return const Login();
           }
           final bool isLoggedIn = snapshot.hasData;
-          if(snapshot.data == admin){
+          if(snapshot.data == admin1 || snapshot.data == admin2){
               isAdmin = true;
           }
           else{

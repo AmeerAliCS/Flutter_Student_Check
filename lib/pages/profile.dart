@@ -99,7 +99,7 @@ class _ProfileState extends State<Profile> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Directionality(textDirection: TextDirection.rtl,
-                child: Text(userData.get("vaccine") ?? '', style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
+                child: Text(userData.get('vaccine'), style: const TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold),)),
             const Text(" :حالةالطالب", style: TextStyle(fontSize: 22, color: kColor, fontWeight: FontWeight.bold)),
           ],),
       ),

@@ -71,7 +71,7 @@ class _StudentDetailsState extends State<StudentDetails> {
                     RoundedButton(
                       title: 'PCR تعديل حالة الطالب الى فحص',
                       colour: bColor,
-                      onPressed: () => updateStudentVaccine(userData, 'PCR فحص'),
+                      onPressed: () => updateStudentVaccine(userData, 'PCR'),
                       size: 55.0,
                     ),
                     RoundedButton(
